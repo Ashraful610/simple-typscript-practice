@@ -126,4 +126,17 @@ function findPerson(personArray:Person[] , email:string):Person  | null{
 }
 
 const findedPerson = findPerson(PersonArray , 'devid@example.com');
-console.log(findedPerson);
+// console.log(findedPerson);
+
+
+// Problem-7 : Create a TypeScript program that declares an array of numbers. Use the spread  operator to pass the elements of the array as arguments to a function that finds the minimum and maximum values of the array. Use destructuring to assign the minimum and maximum values to separate variables, and log them to the console.
+
+const numbersArray = [47 ,36  , 25 , 51 , 91 , 188 , 292 , 360 , 15 , 45 , 520 , 386 , 720 , 610]
+function findMaxAndMinNumber(...numbers:number[]):{minimum:number, maximum:number}{
+  const maximum = Math.max(...numbers)
+  const minimum = Math.min(...numbers)
+  return {minimum, maximum}
+}
+
+const {minimum , maximum} = findMaxAndMinNumber(...numbersArray)
+console.log(minimum, maximum)
