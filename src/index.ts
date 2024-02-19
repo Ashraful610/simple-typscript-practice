@@ -93,4 +93,37 @@ for(const number of numbers){
         totalEvenNumbers +=  number
     }
 }
-console.log(totalEvenNumbers)
+// console.log(totalEvenNumbers)
+
+// Problem-6 : Create an interface called Person that includes properties for name (string), age (number), and email (string). Then create an array of Person objects and write a function that takes the array and a string email as parameters, and returns the Person object that matches the email or null if no match is found.
+
+interface Person {
+    name: string;
+    age: number;
+    email: string;
+}
+const PersonArray : Person[] = [
+    {
+        name: 'John',
+        age: 34,
+        email: 'john@example.com'
+    },
+    {
+        name: 'Devid',
+        age: 30,
+        email: 'devid@example.com'
+    },
+    {
+        name: 'Rock',
+        age: 39,
+        email: 'rock@example.com'
+    }
+]
+
+function findPerson(personArray:Person[] , email:string):Person  | null{
+    const person = personArray.find(person => person.email === email);
+    return (person ? person : null);
+}
+
+const findedPerson = findPerson(PersonArray , 'devid@example.com');
+console.log(findedPerson);
